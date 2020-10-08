@@ -32,8 +32,6 @@
 | preparation_day_id  | integer    | null: false                    |
 | price               | integer    | null: false                    |
 | user                | references | null: false, foreign_key: true |
-| shipping_address    | references | null: false, foreign_key: true |
-
 
 ### Association
 
