@@ -33,6 +33,8 @@
 | preparation_day   | integer    | null: false                    |
 | price             | integer    | null: false                    |
 | user              | references | null: false, foreign_key: true |
+| shipping_address  | references | null: false, foreign_key: true |
+
 
 ### Association
 
@@ -55,3 +57,15 @@
 
 - belongs_to :users
 - has_many :items
+
+## purchaser テーブル
+
+| Column  | Type   | Options                        |
+| ------- | ------ | ------------------------------ |
+| user_id | string | null: false, foreign_key: true |
+| item_id | string | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :users
+- belongs_to :items
