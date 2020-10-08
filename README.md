@@ -27,11 +27,11 @@
 | image             | string     | null: false                    |
 | name              | string     | null: false                    |
 | description       | text       | null: false                    |
-| category          | string     | null: false                    |
-| condition         | string     | null: false                    |
-| shipping_address  | string     | null: false                    |
-| shipping_from     | string     | null: false                    |
-| preparation_day   | string     | null: false                    |
+| category          | integer    | null: false                    |
+| condition         | integer    | null: false                    |
+| shipping_address  | integer    | null: false                    |
+| shipping_from     | integer    | null: false                    |
+| preparation_day   | integer    | null: false                    |
 | price             | string     | null: false                    |
 | user              | references | null: false, foreign_key: true |
 
