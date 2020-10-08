@@ -43,7 +43,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| postal_code   | integer    | null: false                    |
+| postal_code   | integer    |                                |
 | prefecture    | integer    | null: false                    |
 | city          | string     | null: false                    |
 | house_number  | string     | null: false                    |
