@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-10-08T03:44:27.589Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.49.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" version="13.6.5" etag="4bElqs6CatB6QMGxTb3W">
+<mxfile host="65bd71144e" modified="2020-10-08T07:48:35.180Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.49.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" version="13.6.5" etag="-EzZ-Jn8crGGlbvGSzzF">
     <diagram id="Uvi_Y4Suzxy5vI54Rdzi" name="ページ1">
         <mxGraphModel dx="646" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -37,13 +37,10 @@
                 <mxCell id="119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" edge="1" parent="1" source="67" target="76">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="76" target="69">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
                 <mxCell id="68" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="414" y="170" width="180" height="220" as="geometry"/>
                 </mxCell>
-                <mxCell id="69" value="image&#10;name &#10;description&#10;category&#10;condition&#10;shipping_charges&#10;ship_from&#10;preparation_days&#10;price&#10;&#10;belongs_to:users&#10;belongs_to:shipping_address&#10;has_one:purchaser" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="68">
+                <mxCell id="69" value="name &#10;description&#10;category_id&#10;condition_id&#10;shipping_charges_id&#10;shipping_from_id&#10;preparation_days_id&#10;price&#10;&#10;&#10;belongs_to:users&#10;has_one:purchaser" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="68">
                     <mxGeometry y="30" width="180" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="111" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="68" target="69">
@@ -67,7 +64,7 @@
                 <mxCell id="124" value="purchaser" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="205" y="710" width="170" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="125" value="user_id&#10;item_id&#10;&#10;belongs_to:user&#10;belongs_to:item" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="124">
+                <mxCell id="125" value="user_id&#10;item_id&#10;&#10;belongs_to:users&#10;belongs_to:items" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="124">
                     <mxGeometry y="30" width="170" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="129" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="124">
