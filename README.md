@@ -39,20 +39,6 @@
 
 - belongs_to :users
 
-## credit_cards テーブル
-
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| card_number      | string     | null: false                    |
-| expiration_year  | string     | null: false                    |
-| expiration_month | string     | null: false                    |
-| security_code    | string     | null: false                    |
-| user             | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :users
-
 ## shipping_address テーブル
 
 | Column        | Type       | Options                        |
