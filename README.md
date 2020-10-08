@@ -38,7 +38,7 @@
 - belongs_to :user
 - has_one:purchaser
 
-## shipping_address テーブル
+## shipping_addresses テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
@@ -55,7 +55,7 @@
 - belongs_to:purchaser
 
 
-## purchaser テーブル
+## purchasers テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
