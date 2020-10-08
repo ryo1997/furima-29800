@@ -37,7 +37,7 @@
 ### Association
 
 - belongs_to :users
-- has_many :items
+- belongs_to :shipping_address
 
 ## shipping_address テーブル
 
@@ -54,4 +54,4 @@
 ### Association
 
 - belongs_to :users
-- belongs_to :shipping_address
+- has_many :items
