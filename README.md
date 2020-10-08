@@ -17,7 +17,6 @@
 ### Association
 
 - has_many :items
-- has_one :credit_cards
 - has_one :shipping_address
 
 ## items テーブル
