@@ -1,24 +1,71 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column          | Type   | Options     |
+| --------------- | ------ | ----------- |
+| nickname        | string | null: false |
+| email           | string | null: false |
+| password        | string | null: false |
+| first_name      | string | null: false |
+| last_name       | string | null: false |
+| first_name_kana | string | null: false |
+| last_name_kana  | string | null: false |
+| birthday_year   | string | null: false |
+| birthday_month  | string | null: false |
+| birthday_day    | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
+- has_one :credit_cards
+- has_one :shipping_address
 
-* Configuration
+## items テーブル
 
-* Database creation
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| image             | string     | null: false                    |
+| name              | string     | null: false                    |
+| description       | string     | null: false                    |
+| category          | string     | null: false                    |
+| condition         | string     | null: false                    |
+| shipping_address  | string     | null: false                    |
+| shipping_from     | string     | null: false                    |
+| preparation_day   | string     | null: false                    |
+| price             | string     | null: false                    |
+| user              | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :users
 
-* Services (job queues, cache servers, search engines, etc.)
+## credit_cards テーブル
 
-* Deployment instructions
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| card_number      | string     | null: false                    |
+| expiration_year  | string     | null: false                    |
+| expiration_month | string     | null: false                    |
+| security_code    | string     | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :users
+
+## shipping_address テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_code   | string     | null: false                    |
+| prefecture    | string     | null: false                    |
+| city          | string     | null: false                    |
+| house_number  | string     | null: false                    |
+| building_name | string     | null: false                    |
+| phone_number  | string     | null: false                    |
+| user          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :users
