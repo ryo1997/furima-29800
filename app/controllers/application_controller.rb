@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    #新規登録時のストロングパラメータに「nicknameカラムとageカラム」の追加
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :last_name, :first_name_kana, :last_name_kana,:birthday])
   end
 end
