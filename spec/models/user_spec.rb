@@ -24,6 +24,9 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Email can't be blank")
       end
       it 'emailが意図しない形ならNG' do
+        @user.email = 'aa1234'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email is invalid")
       end
       it 'emailが重複していたらNG' do
         @user.save
