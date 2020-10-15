@@ -13,5 +13,8 @@ class ItemsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+  def items_params
+    params.require(:items).permit(:content, :image).merge(user_id: current_user.id)
+  end
 end
 

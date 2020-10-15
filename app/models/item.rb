@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :genre, :condition, :shipping_charge, :prefecture, :preparation_day
+  has_one_attached :image
 
   with_options presence: true do
     validates :name
