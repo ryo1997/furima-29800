@@ -3,7 +3,22 @@ class Item < ApplicationRecord
   belongs_to_active_hash :genre, :condition, :shipping_charge, :prefecture, :preparation_day
 
   with_options presence: true do
-    validates :name, :description, :price, :user
-    validates :genre_id, :condition_id, :shipping_charge_id, :prefecture_id, :preparation_day_id, numericality: { other_than: 1 }
+    validates :name
+    validates :description
+    validates :price
+    validates :user
+    validates :genre_id
+    validates :condition_id
+    validates :shipping_charge_id
+    validates :prefecture_id
+    validates :preparation_day_id
+  end
+
+  with_options numericality: { other_than: 1 } true do
+    validates :genre_id
+    validates :condition_id
+    validates :shipping_charge_id
+    validates :prefecture_id
+    validates :preparation_day_id
   end
 end
