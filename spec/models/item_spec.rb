@@ -33,33 +33,33 @@ RSpec.describe Item, type: :model do
       it 'genre_idが空ならNG' do
         @item.genre_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Genre can't be blank", "Genre is not a number")
+        expect(@item.errors.full_messages).to include("Genre can't be blank", 'Genre is not a number')
       end
-      
+
       it 'condition_idが空ならNG' do
         @item.condition_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank", "Condition is not a number")
+        expect(@item.errors.full_messages).to include("Condition can't be blank", 'Condition is not a number')
       end
-      
+
       it 'shipping_charge_idが空ならNG' do
         @item.shipping_charge_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping charge can't be blank", "Shipping charge is not a number")
+        expect(@item.errors.full_messages).to include("Shipping charge can't be blank", 'Shipping charge is not a number')
       end
 
       it 'prefecture_idが空ならNG' do
         @item.prefecture_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank", "Prefecture is not a number")
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank", 'Prefecture is not a number')
       end
-      
+
       it 'preparation_day_idが空ならNG' do
         @item.preparation_day_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Preparation day can't be blank", "Preparation day is not a number")
+        expect(@item.errors.full_messages).to include("Preparation day can't be blank", 'Preparation day is not a number')
       end
-      
+
       it 'priceが空ならNG' do
         @item.price = ''
         @item.valid?
@@ -69,19 +69,19 @@ RSpec.describe Item, type: :model do
       it 'priceが全角数字のみならNG' do
         @item.price = '１２３４５６'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
 
       it 'priceが300円以下ならNG' do
         @item.price = '280'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
 
       it 'priceが9999999円以上ならNG' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
     end
   end
