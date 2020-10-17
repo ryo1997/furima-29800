@@ -20,6 +20,7 @@ class Item < ApplicationRecord
     validates :shipping_charge_id
     validates :prefecture_id
     validates :preparation_day_id
+    validates :image
   end
 
   validates :genre_id, :condition_id, :shipping_charge_id, :prefecture_id, :preparation_day_id, numericality: { other_than: 1 }
