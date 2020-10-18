@@ -36,10 +36,22 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Genre can't be blank", 'Genre is not a number')
       end
 
+      it 'genre_idが1ならNG' do
+        @item.genre_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Genre must be other than 1')
+      end
+
       it 'condition_idが空ならNG' do
         @item.condition_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank", 'Condition is not a number')
+      end
+
+      it 'condition_idが1ならNG' do
+        @item.condition_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
 
       it 'shipping_charge_idが空ならNG' do
@@ -48,16 +60,34 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Shipping charge can't be blank", 'Shipping charge is not a number')
       end
 
+      it 'shipping_charge_idが1ならNG' do
+        @item.shipping_charge_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Shipping charge must be other than 1')
+      end
+
       it 'prefecture_idが空ならNG' do
         @item.prefecture_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank", 'Prefecture is not a number')
       end
 
+      it 'prefecture_idが1ならNG' do
+        @item.prefecture_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
+      end
+
       it 'preparation_day_idが空ならNG' do
         @item.preparation_day_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Preparation day can't be blank", 'Preparation day is not a number')
+      end
+
+      it 'preparation_day_idが1ならNG' do
+        @item.preparation_day_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Preparation day must be other than 1')
       end
 
       it 'priceが空ならNG' do
