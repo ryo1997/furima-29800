@@ -10,6 +10,6 @@ class BuyerManagement
     purchaser = Purchaser.create(item_id: item_id, user_id: user_id)
     #purchaser.id
     # 住所の情報を保存
-    ShippingAddress.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, building_name: building_name, phone_number: phone_number )#purchaser.user_id: purchaser.user_id
+    ShippingAddress.create(purchaser_id: purchaser.id, postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, building_name: building_name, phone_number: phone_number )#purchaser.user_id: purchaser.user_id
   end
 end
