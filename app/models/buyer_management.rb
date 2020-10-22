@@ -7,7 +7,7 @@ class BuyerManagement
     validates :prefecture_id, numericality: { other_than: 1 }
     validates :city
     validates :house_number
-    validates :phone_number,  VALID_PHONE_REGEX = /\A\d{11}\z/.freeze, format: { with: VALID_PHONE_REGEX }
+    validates :phone_number, format: { with: /\A\d{11}\z/.freeze }
     validates :token
   end
 
