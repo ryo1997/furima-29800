@@ -4,17 +4,12 @@ class BuyerManagement
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
-    validates :prefecture_id
+    validates :prefecture_id, numericality: { other_than: 1 }
     validates :city
     validates :house_number
-    validates :phone_number
+    validates :phone_number,  VALID_PHONE_REGEX = /\A\d{11}\z/.freeze, format: { with: VALID_PHONE_REGEX }
     validates :token
   end
-
-  validates :prefecture_id, numericality: { other_than: 1 }
-
-  VALID_PHONE_REGEX = /\A\d{11}\z/.freeze
-  validates :phone_number, format: { with: VALID_PHONE_REGEX }
 
   def save
     purchaser = Purchaser.create(item_id: item_id, user_id: user_id)
