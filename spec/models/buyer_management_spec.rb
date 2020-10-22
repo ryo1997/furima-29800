@@ -10,6 +10,11 @@ RSpec.describe BuyerManagement, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@buyer_management).to be_valid
       end
+
+      it '建物名が空でも保存できる' do
+        @buyer_management.building_name = nil
+        expect(@buyer_management).to be_valid
+      end
     end
 
     context '商品購入がうまくいかないとき' do
